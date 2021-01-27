@@ -24,7 +24,7 @@ echo "
 ╚════╝ ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝
                                                               
 CIS Benchmark Hardening
-For Ubuntu Server 16.04 LTS
+For Ubuntu Server 18.04 LTS
 By Jason Soto "
 echo
 echo
@@ -154,16 +154,16 @@ chmod og-rwx /boot/grub/grub.cfg
 #1.4.2 Ensure bootloader password is set (Scored)
 
 echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
-echo -e "\e[93m[+]\e[00m We will now Set a Bootloader Password"
+echo -e "\e[93m[+]\e[00m We will now Set a Bootloader Password (AWS EC2 Skipping)"
 echo -e "\e[34m---------------------------------------------------------------------------------------------------------\e[00m"
 echo ""
 
-grub-mkpasswd-pbkdf2 | tee grubpassword.tmp
-grubpassword=$(cat grubpassword.tmp | sed -e '1,2d' | cut -d ' ' -f7)
-echo " set superusers="root" " >> /etc/grub.d/40_custom
-echo " password_pbkdf2 root $grubpassword " >> /etc/grub.d/40_custom
-rm grubpassword.tmp
-update-grub
+# grub-mkpasswd-pbkdf2 | tee grubpassword.tmp
+# grubpassword=$(cat grubpassword.tmp | sed -e '1,2d' | cut -d ' ' -f7)
+# echo " set superusers="root" " >> /etc/grub.d/40_custom
+# echo " password_pbkdf2 root $grubpassword " >> /etc/grub.d/40_custom
+# rm grubpassword.tmp
+# update-grub
 
 #1.4.3 Ensure authentication required for single user mode (Scored)
 

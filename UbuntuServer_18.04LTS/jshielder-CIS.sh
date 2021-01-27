@@ -312,6 +312,7 @@ sleep 2
 echo "ALL: 10.0.0.0/255.0.0.0" >> /etc/hosts.allow
 echo "ALL: 192.168.0.0/255.255.0.0" >> /etc/hosts.allow
 echo "ALL: 172.16.0.0/255.240.0.0" >> /etc/hosts.allow
+echo "ALL: 172.31.0.0/255.255.0.0" >> /etc/hosts.allow
 
 #3.4.3 Ensure /etc/hosts.deny is configured (Scored)
 
